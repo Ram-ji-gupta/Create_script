@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Create the projects directory
+mkdir projects
+
+# Create subdirectories with or without oriserve
+mkdir projects/facebook
+mkdir projects/google
+mkdir projects/google/oriserve
+mkdir projects/meta
+mkdir projects/meta/oriserve
+mkdir projects/oracle
+
+# Find all directories that contain a subdirectory named 'oriserve'
+find projects/ -type d -name oriserve | while read dir; do
+  # Create a new file named 'test.txt' inside each 'oriserve' directory
+  touch "$dir/test.txt"
+done
